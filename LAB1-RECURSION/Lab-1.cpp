@@ -88,7 +88,6 @@ cout<<ans3<<endl;;
   cout<<"The reversed string is :"<<s3<<endl;;
 
 
-
    int a1,b;
    a1=18;
    b=12;
