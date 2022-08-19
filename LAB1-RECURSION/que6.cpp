@@ -22,7 +22,7 @@ int main()
 {
     string s="abba";
     ll len = s.length();
-     bool con = IsPalindrome(s,0,len);
+     bool con = IsPalindrome(s,0,len-1);
   if (con == 0){
     
   cout<<"It is not a Palindrome"<<endl;
