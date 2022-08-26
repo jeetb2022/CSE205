@@ -10,19 +10,29 @@ struct Node
 };
 
 int flag = 0;
-void dubbly_append(Node *&head, int element)
+void dubbly_remove(Node *&head, int element)
 {
     Node *temp = head;
-    Node *newNode = new Node();
-    newNode->data = element;
-    newNode->next = NULL;
-    
         while (temp->next!=NULL)
         {
+            if (temp->data == element){
+                break;
+            }
             temp = temp->next;
         }
-        newNode->prev = temp;
-        temp->next = newNode;    
+        if (temp->prev == NULL){
+        temp->next->prev = NULL;
+        head = temp->next;
+        }
+        else if (temp->next == NULL){
+
+        temp->prev->next = temp->next;
+        }
+        else {
+
+        temp->prev->next = temp->next;
+        temp->next->prev = temp->prev;
+        }
 }
 
 int main()
@@ -34,20 +44,19 @@ int main()
     head = (struct Node *)malloc(sizeof(struct Node));
     second = (struct Node *)malloc(sizeof(struct Node));
     third = (struct Node *)malloc(sizeof(struct Node));
-    head->data = 1;
+    head->data = 4;
     head->next = second;
     head->prev = NULL;
-    second->data = 2;
+    second->data = 50;
     second->next = third;
     second->prev = head;
     third->data = 3;
     third->next = NULL;
     third->prev = second;
 
-    dubbly_append(head,69);
+    dubbly_remove(head,3);
     if (flag == 0)
     {
-
         Node *temp = head;
         while (temp != NULL)
         {
