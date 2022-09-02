@@ -13,26 +13,29 @@ int flag = 0;
 void dubbly_remove(Node *&head, int element)
 {
     Node *temp = head;
-        while (temp->next!=NULL)
+    while (temp->next != NULL)
+    {
+        if (temp->data == element)
         {
-            if (temp->data == element){
-                break;
-            }
-            temp = temp->next;
+            break;
         }
-        if (temp->prev == NULL){
+        temp = temp->next;
+    }
+    if (temp->prev == NULL)
+    {
         temp->next->prev = NULL;
         head = temp->next;
-        }
-        else if (temp->next == NULL){
-
+    }
+    else if (temp->next == NULL)
+    {
         temp->prev->next = temp->next;
-        }
-        else {
+    }
+    else
+    {
 
         temp->prev->next = temp->next;
         temp->next->prev = temp->prev;
-        }
+    }
 }
 
 int main()
@@ -54,7 +57,7 @@ int main()
     third->next = NULL;
     third->prev = second;
 
-    dubbly_remove(head,3);
+    dubbly_remove(head, 3);
     if (flag == 0)
     {
         Node *temp = head;

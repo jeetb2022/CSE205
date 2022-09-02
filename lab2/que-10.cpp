@@ -9,29 +9,31 @@ struct Node
 };
 
 int flag = 0;
-void replatind(Node *&head,int position,int element)
+void replatind(Node *&head, int position, int element)
 {
     Node *temp = head;
     Node *temp2 = head;
-    int i=1;
-    int size=1;
-    while (temp2->next!=NULL)
+    int i = 1;
+    int size = 1;
+    while (temp2->next != NULL)
     {
         temp2 = temp2->next;
         size++;
     }
-    if (position > size){
-        cout<<"-1";
+    if (position > size)
+    {
+        cout << "-1";
         flag++;
     }
-    else {
-        
-    while (i!=position)
+    else
     {
-        temp = temp->next;
-        i++;
-    }
-    temp->data = element;
+
+        while (i != position)
+        {
+            temp = temp->next;
+            i++;
+        }
+        temp->data = element;
     }
 }
 
@@ -51,15 +53,16 @@ int main()
     third->data = 3;
     third->next = NULL;
 
-    replatind(head,5,69);
-    if (flag==0){
-
-    Node *temp = head;
-    while (temp != NULL)
+    replatind(head, 5, 69);
+    if (flag == 0)
     {
-        cout << temp->data << " ";
-        temp = temp->next;
-    }
+
+        Node *temp = head;
+        while (temp != NULL)
+        {
+            cout << temp->data << " ";
+            temp = temp->next;
+        }
     }
     return 0;
 }

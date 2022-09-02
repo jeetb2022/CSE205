@@ -3,9 +3,6 @@ using namespace std;
 #define ll long long int
 
 void insatend(int arr[],int element,int size){
-    // for (int i=size;i>=position;i--){
-    //     arr[i]=arr[i-1];
-    // }
     arr[size]=element;
 }
 int main()

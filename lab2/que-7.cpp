@@ -8,7 +8,7 @@ struct Node
     struct Node *next;
 };
 
-void push_back(Node *&head, int newElement)
+void linsatend(Node *&head, int newElement)
 {
     Node *newNode = new Node();
     newNode->data = newElement;
@@ -29,33 +29,28 @@ void push_back(Node *&head, int newElement)
     }
 }
 
-    int main()
+int main()
+{
+    struct Node *head = NULL;
+    struct Node *second = NULL;
+    struct Node *third = NULL;
+
+    head = (struct Node *)malloc(sizeof(struct Node));
+    second = (struct Node *)malloc(sizeof(struct Node));
+    third = (struct Node *)malloc(sizeof(struct Node));
+    head->data = 1;
+    head->next = second;
+    second->data = 2;
+    second->next = third;
+    third->data = 3;
+    third->next = NULL;
+
+    linsatend(head, 69);
+    Node *temp = head;
+    while (temp != NULL)
     {
-        struct Node *head = NULL;
-        struct Node *second = NULL;
-        struct Node *third = NULL;
-
-        head = (struct Node *)malloc(sizeof(struct Node));
-        second = (struct Node *)malloc(sizeof(struct Node));
-        third = (struct Node *)malloc(sizeof(struct Node));
-
-        head->data = 1;
-        head->next = second;
-
-        second->data = 2;
-
-        second->next = third;
-
-        third->data = 3;
-        third->next = NULL;
-
-        push_back(head, 4);
-        Node *temp = head;
-        while (temp != NULL)
-        {
-            cout << temp->data << " ";
-            temp = temp->next;
-        }
-        // cout << temp->data << " ";
-        return 0;
+        cout << temp->data << " ";
+        temp = temp->next;
     }
+    return 0;
+}

@@ -146,6 +146,46 @@ public:
 
 
 
+
+   vector<vector<int>> multiply(vector<vector<int>> rhsmatrix)
+    {
+        vector<vector<int>> ans(nrow);
+        cout << endl;
+        for (int i = 0; i < nrow; i++)
+        {
+            for (int j = 0; j < ncol; j++)
+            {
+                int flag = 0, value;
+
+                for (int k = 0; k < v.size(); k++)
+                {
+
+                    if (v[k][0] == i && v[k][1] == j)
+                    {
+                        value = v[k][2];
+                        flag = 1;
+                        break;
+                    }
+                }
+                if (flag == 1)
+                {
+                    ans[i].push_back(value - rhsmatrix[i][j]);
+                    // cout<<"one"<<v[i][2];
+                }
+                else
+                {
+                    ans[i].push_back(-rhsmatrix[i][j]);
+                }
+            }
+        }
+        return ans;
+    }
+
+
+
+
+
+
     void display()
     {
         for (int i = 0; i < nrow; i++)
@@ -177,15 +217,14 @@ int main()
 {
 
     Matrix a(5, 5);
-    vector<vector<int>> rhsMatrix = {{0, 0, 0, 0, 0}, {0, 0, 0, 3, 0}, {0, 0, 0, 2, 0}, {0, 0, 0, 0, 0}, {1, 0, 0, 0, 0}};
-    // for (int i=0;i<5;i++){
-    //     for (int j=0;j<5;j++){
-    //         int temp ;
-    //         cin>>temp;
-    //        rhsMatrix[i].push_back(temp);
-    //     }
-    // }
-    // a.clear(3);
+    vector<vector<int>> rhsMatrix = {
+    {0, 0, 0, 0, 0},
+    {0, 0, 0, 3, 0},
+    {0, 0, 0, 2, 0},
+    {0, 0, 0, 0, 0},
+    {1, 0, 0, 0, 0}};
+
+    a.clear(3);
     a.setItem(3, 2, 6);
     a.setItem(1, 1, 2);
     // cout << a.getItem(1, 2) << endl;
@@ -209,6 +248,11 @@ int main()
         }
         cout << endl;
     }
+
+
+
+
+
     cout<<"subtraction: "<<endl;
     vector<vector<int>> subtraction;
     subtraction = a.subtract(rhsMatrix);
@@ -220,6 +264,10 @@ int main()
         }
         cout << endl;
     }
+
+
+
+
     a.scaleBy(3);
 
     return 0;

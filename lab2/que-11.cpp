@@ -16,13 +16,13 @@ void dubbly_append(Node *&head, int element)
     Node *newNode = new Node();
     newNode->data = element;
     newNode->next = NULL;
-    
-        while (temp->next!=NULL)
-        {
-            temp = temp->next;
-        }
-        newNode->prev = temp;
-        temp->next = newNode;    
+
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    newNode->prev = temp;
+    temp->next = newNode;
 }
 
 int main()
@@ -44,10 +44,9 @@ int main()
     third->next = NULL;
     third->prev = second;
 
-    dubbly_append(head,69);
+    dubbly_append(head, 69);
     if (flag == 0)
     {
-
         Node *temp = head;
         while (temp != NULL)
         {
