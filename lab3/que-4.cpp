@@ -4,7 +4,6 @@ using namespace std;
 
 class LifeGrid
 {
-    // Access specifier
 public:
     vector<vector<int>> v;
     vector<pair<int, int>> liveCells;
@@ -33,7 +32,6 @@ public:
     {
         for (int i = 0; i < v.size(); i++)
         {
-
             liveCells.push_back(v[i]);
         }
     }
@@ -121,10 +119,14 @@ int main()
 
     LifeGrid a(5,5);
     a.setCell(2,3);
+    vector<pair<int , int>>z = {{1,3},{4,4},{2,4}};
+    a.configure(z);
+    a.display();
     a.setCell(4,4);
     a.setCell(1,1);
     a.setCell(1,4);
     cout<<endl;
+
     a.clearCell(1,4);
     int liveNeighbours = a.numLiveNeighbors(3,3);
     cout<<"The number of live neighbours is : "<<liveNeighbours<<endl;
