@@ -7,7 +7,6 @@ struct Node
     int data;
     struct Node *next;
 };
-
 int flag = 0;
 void replatind(Node *&head, int position, int element)
 {
@@ -27,7 +26,6 @@ void replatind(Node *&head, int position, int element)
     }
     else
     {
-
         while (i != position)
         {
             temp = temp->next;

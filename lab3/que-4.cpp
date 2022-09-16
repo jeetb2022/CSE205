@@ -79,35 +79,39 @@ public:
         {
             for (int j = 0; j < ncols; j++)
             {
-                int flag=0;
-                for(int k=0;k<liveCells.size();k++){
-                
-                if (i==liveCells[k].first && j== liveCells[k].second){
-                    cout<<1<<" ";
-                    flag=1;
+                int flag = 0;
+                for (int k = 0; k < liveCells.size(); k++)
+                {
+
+                    if (i == liveCells[k].first && j == liveCells[k].second)
+                    {
+                        cout << 1 << " ";
+                        flag = 1;
+                    }
                 }
-                }
-                if (flag==0){
-                    cout<<0<<" ";
+                if (flag == 0)
+                {
+                    cout << 0 << " ";
                 }
             }
-            cout<<endl;
+            cout << endl;
         }
     }
 
-    int numLiveNeighbors(int row , int col){
-        int ct=0;
-            for (int j = col-1;j<col+2;j++){
-                for (int k=row-1;k<row+2;k++){\
-
-
-        for (int i=0;i<liveCells.size();i++){
-            
-                    if ((liveCells[i].first == k && liveCells[i].second==j) && (k!=row || j!=col)){
+    int numLiveNeighbors(int row, int col)
+    {
+        int ct = 0;
+        for (int j = col - 1; j < col + 2; j++)
+        {
+            for (int k = row - 1; k < row + 2; k++)
+            {
+                for (int i = 0; i < liveCells.size(); i++)
+                {
+                    if ((liveCells[i].first == k && liveCells[i].second == j) && (k != row || j != col))
+                    {
                         ct++;
                     }
                 }
-                
             }
         }
         return ct;
@@ -116,20 +120,17 @@ public:
 
 int main()
 {
-
-    LifeGrid a(5,5);
-    a.setCell(2,3);
-    vector<pair<int , int>>z = {{1,3},{4,4},{2,4}};
-    a.configure(z);
+    LifeGrid a(5, 5);
+    a.setCell(2, 3);
+    a.configure({{1, 3}, {4, 4}, {2, 4}});
     a.display();
-    a.setCell(4,4);
-    a.setCell(1,1);
-    a.setCell(1,4);
-    cout<<endl;
-
-    a.clearCell(1,4);
-    int liveNeighbours = a.numLiveNeighbors(3,3);
-    cout<<"The number of live neighbours is : "<<liveNeighbours<<endl;
+    a.setCell(4, 4);
+    a.setCell(1, 1);
+    a.setCell(1, 4);
+    cout << endl;
+    a.clearCell(1, 4);
+    int liveNeighbours = a.numLiveNeighbors(3, 3);
+    cout << "The number of live neighbours is : " << liveNeighbours << endl;
 
     return 0;
 }

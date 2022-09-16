@@ -3,7 +3,6 @@ using namespace std;
 #define ll long long int
 
 // Recursive 
-
  ll addUp(ll n){
     if (n==1){
         return 1;
@@ -12,8 +11,6 @@ using namespace std;
     ll ans = n+addUp(n-1);
     return ans;
  }
-
-
 
 int main()
 {

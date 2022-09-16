@@ -57,7 +57,7 @@ int main()
     third->next = NULL;
     third->prev = second;
 
-    dubbly_remove(head, 3);
+    dubbly_remove(head, 50);
     if (flag == 0)
     {
         Node *temp = head;

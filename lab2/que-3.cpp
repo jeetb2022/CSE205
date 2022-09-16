@@ -9,6 +9,7 @@ void delatind(int arr[],int position,int size){
 }
 int main()
 {
+    
     int n=5;
     int array[n] = {1,3,5,7,9};
 int size = sizeof(array)/sizeof(array[0]);

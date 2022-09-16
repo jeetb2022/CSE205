@@ -8,6 +8,7 @@ struct Node
     struct Node *next;
 };
 
+
 void linsatend(Node *&head, int newElement)
 {
     Node *newNode = new Node();
@@ -22,7 +23,6 @@ void linsatend(Node *&head, int newElement)
         Node *temp = head;
         while (temp->next != NULL)
         {
-
             temp = temp->next;
         }
         temp->next = newNode;

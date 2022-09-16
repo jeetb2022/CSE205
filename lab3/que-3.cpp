@@ -296,6 +296,10 @@ int main()
 
     a.clear(3);
     a.display();
+    cout<<"Clearing the matrix with a particular value:"<<endl;
+
+    a.clear(3);
+    a.display();
 
     return 0;
 }
