@@ -12,7 +12,7 @@ int main()
         int ct = 6 - i - 1;
         for (int j = i + 1; j < 6; j++)
         {
-            cout << "f ";
+            // cout << "f ";
             s += "f";
             if (arr[j] < arr[i])
             {
@@ -24,11 +24,11 @@ int main()
             {
                 ct--;
             }
-            for(auto i : arr){
-                cout << i << " ";
-            }
-            cout << endl;
-            cout << ct << endl;
+            // for(auto i : arr){
+            //     cout << i << " ";
+            // }
+            // cout << endl;
+            // cout << ct << endl;
             if (ct == 0)
             {
                 flag = 1;
